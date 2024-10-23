@@ -30,7 +30,7 @@ const countries = {
 };
 
 const CountryPage = ({ params }: { params: { country_name: string } }) => {
-  const country = countries[params.country_name.toLowerCase()];
+  const country = countries[params.country_name.toLowerCase() as keyof typeof countries];
 
   if (!country) {
     return notFound(); // Shows a 404 page if the country doesn't exist
